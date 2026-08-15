@@ -1,0 +1,70 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
+import { projectCategories, projects } from "@/data/projects";
+import { ProjectCard } from "@/components/project-card";
+
+export function ProjectsBrowser() {
+  const [search, setSearch] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState<(typeof projectCategories)[number]>("All");
+
+  const filteredProjects = useMemo(() => {
+    return projects.filter((project) => {
+      const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
+      const matchesSearch =
+        project.title.toLowerCase().includes(search.toLowerCase()) ||
+        project.shortDescription.toLowerCase().includes(search.toLowerCase()) ||
+        project.technologies.some((tech) => tech.toLowerCase().includes(search.toLowerCase()));
+
+      return matchesCategory && matchesSearch;
+    });
+  }, [search, selectedCategory]);
+
+  return (
+    <div className="space-y-8">
+      <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-950/60 p-4 md:flex-row md:items-center md:justify-between">
+        <div className="relative w-full md:max-w-md">
+          <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
+          <input
+            type="search"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+            placeholder="Search projects..."
+            aria-label="Search projects"
+            className="w-full rounded-xl border border-white/10 bg-slate-900/80 py-3 pl-10 pr-3 text-sm text-white outline-none transition focus:border-cyan-400/50"
+          />
+        </div>
+
+        <div className="flex flex-wrap gap-2">
+          {projectCategories.map((category) => (
+            <button
+              key={category}
+              type="button"
+              onClick={() => setSelectedCategory(category)}
+              className={`rounded-full border px-3 py-2 text-xs font-medium uppercase tracking-[0.12em] transition ${
+                selectedCategory === category
+                  ? "border-cyan-400/60 bg-cyan-500/10 text-cyan-300"
+                  : "border-white/10 bg-white/3 text-slate-300 hover:border-cyan-400/30 hover:text-white"
+              }`}
+            >
+              {category}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {filteredProjects.length > 0 ? (
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.id} project={project} />
+          ))}
+        </div>
+      ) : (
+        <div className="rounded-2xl border border-dashed border-white/10 bg-slate-950/50 p-8 text-center text-slate-300">
+          No projects match your search yet.
+        </div>
+      )}
+    </div>
+  );
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#081326"/><stop offset="100%" stop-color="#0f172a"/></linearGradient>
+    <linearGradient id="accent" x1="0" x2="1" y1="0" y2="1"><stop offset="0%" stop-color="#67e8f9"/><stop offset="100%" stop-color="#3b82f6"/></linearGradient>
+  </defs>
+  <rect width="1200" height="780" fill="url(#bg)"/>
+  <rect x="80" y="120" width="1040" height="540" rx="32" fill="#0b1120" stroke="#1e293b"/>
+  <rect x="120" y="160" width="230" height="430" rx="18" fill="#111827"/>
+  <rect x="390" y="160" width="680" height="120" rx="18" fill="#111827"/>
+  <rect x="390" y="310" width="320" height="150" rx="18" fill="#111827"/>
+  <rect x="750" y="310" width="320" height="150" rx="18" fill="#111827"/>
+  <rect x="390" y="500" width="680" height="90" rx="18" fill="#111827"/>
+  <rect x="150" y="210" width="170" height="12" rx="6" fill="url(#accent)" opacity="0.9"/>
+  <rect x="150" y="250" width="120" height="12" rx="6" fill="#475569"/>
+  <rect x="150" y="300" width="160" height="260" rx="18" fill="#172033"/>
+  <text x="560" y="415" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="48" font-weight="700">SCA Courier</text>
+</svg>

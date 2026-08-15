@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <rect width="1200" height="780" fill="#08111d"/>
+  <rect x="60" y="80" width="1080" height="620" rx="28" fill="#0f172a"/>
+  <rect x="100" y="120" width="1000" height="110" rx="16" fill="#111827"/>
+  <rect x="110" y="260" width="290" height="230" rx="18" fill="#172033"/>
+  <rect x="445" y="260" width="290" height="230" rx="18" fill="#172033"/>
+  <rect x="780" y="260" width="290" height="230" rx="18" fill="#172033"/>
+  <rect x="120" y="530" width="960" height="110" rx="18" fill="#111827"/>
+  <text x="520" y="204" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">Demo Storefront</text>
+</svg>

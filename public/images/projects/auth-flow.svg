@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <rect width="1200" height="780" fill="#050816"/>
+  <rect x="150" y="80" width="900" height="620" rx="30" fill="#111827"/>
+  <rect x="220" y="160" width="760" height="420" rx="25" fill="#0f172a"/>
+  <rect x="300" y="240" width="600" height="22" rx="11" fill="#67e8f9"/>
+  <rect x="300" y="292" width="520" height="20" rx="10" fill="#334155"/>
+  <rect x="300" y="345" width="520" height="20" rx="10" fill="#334155"/>
+  <rect x="300" y="420" width="180" height="44" rx="22" fill="#67e8f9"/>
+  <text x="470" y="610" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">Auth Flow Studio</text>
+</svg>

@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+:root {
+  --background: #050816;
+  --foreground: #ecf3ff;
+  --muted: #9aa7ba;
+  --panel: rgba(14, 22, 37, 0.9);
+  --panel-strong: rgba(17, 24, 39, 0.96);
+  --line: rgba(148, 163, 184, 0.18);
+  --accent: #67e8f9;
+  --accent-strong: #3b82f6;
+  --success: #34d399;
+  --danger: #f87171;
+  --fluid-body: clamp(0.95rem, 0.92rem + 0.16vw, 1.125rem);
+  --fluid-label: clamp(0.72rem, 0.66rem + 0.2vw, 0.88rem);
+  --fluid-h1: clamp(2.25rem, 1.7rem + 2.8vw, 5.5rem);
+  --fluid-h2: clamp(1.5rem, 1.2rem + 1.6vw, 3.5rem);
+  --fluid-h3: clamp(1.15rem, 1rem + 0.7vw, 1.625rem);
+  --fluid-nav: clamp(0.875rem, 0.82rem + 0.2vw, 1.06rem);
+  --fluid-button: clamp(0.95rem, 0.9rem + 0.18vw, 1.05rem);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background:
+    radial-gradient(circle at top, rgba(59, 130, 246, 0.16), transparent 25%),
+    linear-gradient(180deg, #030712 0%, #050816 100%);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-size: var(--fluid-body);
+  line-height: 1.7;
+  min-height: 100vh;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+p,
+span,
+a,
+li,
+button,
+input,
+textarea,
+select {
+  overflow-wrap: break-word;
+}
+
+h1 {
+  font-size: var(--fluid-h1);
+  line-height: 0.96;
+}
+
+h2 {
+  font-size: var(--fluid-h2);
+  line-height: 1.08;
+}
+
+h3 {
+  font-size: var(--fluid-h3);
+  line-height: 1.2;
+}
+
+p,
+a,
+button,
+input,
+textarea,
+select {
+  font-size: var(--fluid-body);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+button,
+input,
+textarea,
+select,
+a {
+  min-height: 44px;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.25);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

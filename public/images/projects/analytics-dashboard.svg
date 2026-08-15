@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <rect width="1200" height="780" fill="#050816"/>
+  <rect x="90" y="90" width="1020" height="600" rx="30" fill="#0b1120"/>
+  <rect x="130" y="130" width="220" height="100" rx="18" fill="#111827"/>
+  <rect x="390" y="130" width="220" height="100" rx="18" fill="#111827"/>
+  <rect x="650" y="130" width="220" height="100" rx="18" fill="#111827"/>
+  <rect x="910" y="130" width="160" height="100" rx="18" fill="#111827"/>
+  <rect x="130" y="270" width="940" height="330" rx="20" fill="#111827"/>
+  <path d="M180 520 L310 470 L430 500 L570 410 L760 360 L920 420 L1020 300" stroke="#67e8f9" stroke-width="8" fill="none" stroke-linecap="round"/>
+  <text x="435" y="220" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">Analytics Dashboard</text>
+</svg>

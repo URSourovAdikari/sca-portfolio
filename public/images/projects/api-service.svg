@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <rect width="1200" height="780" fill="#08111d"/>
+  <rect x="100" y="100" width="1000" height="580" rx="32" fill="#111827"/>
+  <circle cx="280" cy="250" r="70" fill="#67e8f9" opacity="0.9"/>
+  <circle cx="600" cy="250" r="70" fill="#3b82f6" opacity="0.9"/>
+  <circle cx="920" cy="250" r="70" fill="#34d399" opacity="0.9"/>
+  <rect x="210" y="430" width="780" height="150" rx="22" fill="#0f172a"/>
+  <text x="510" y="224" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">API Service</text>
+</svg>

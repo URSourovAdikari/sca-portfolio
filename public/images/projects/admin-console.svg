@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780">
+  <rect width="1200" height="780" fill="#050816"/>
+  <rect x="100" y="100" width="1000" height="580" rx="30" fill="#0b1120"/>
+  <rect x="150" y="150" width="180" height="480" rx="18" fill="#111827"/>
+  <rect x="380" y="150" width="670" height="120" rx="18" fill="#111827"/>
+  <rect x="380" y="310" width="260" height="150" rx="18" fill="#111827"/>
+  <rect x="680" y="310" width="370" height="150" rx="18" fill="#111827"/>
+  <rect x="380" y="500" width="670" height="130" rx="18" fill="#111827"/>
+  <text x="460" y="230" fill="#e2e8f0" font-family="Arial, sans-serif" font-size="42" font-weight="700">Admin Console</text>
+</svg>
