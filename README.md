@@ -1,36 +1,85 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Sourov Chandra Adikari | Portfolio
 
-## Getting Started
+A professional portfolio website built with Next.js to showcase full-stack projects, experience, education, and contact information.
 
-First, run the development server:
+## Overview
+
+This portfolio highlights a clean developer brand, strong frontend fundamentals, and practical product work. It includes project case studies, a resume section, contact form, and a responsive layout optimized for desktop and mobile devices.
+
+## Tech Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Node.js
+- Nodemailer
+- Vercel deployment
+
+## Features
+
+- Responsive fixed sidebar navigation and mobile drawer
+- Home, About, Skills, Projects, Experience, Education, Resume, and Contact pages
+- Centralized project data with featured project cards and dynamic case-study routing
+- Contact form with validation and SMTP-backed email delivery
+- SEO metadata, Open Graph tags, sitemap, and robots configuration
+- Progressive loading with server-rendered sections and dynamic imports
+
+## Pages
+
+- Home
+- About
+- Skills
+- Projects
+- Project case studies
+- Experience
+- Education
+- Resume
+- Contact
+
+## Featured Projects
+
+### SCA Courier
+- GitHub: https://github.com/URSourovAdikari/sca-courier
+- Live: https://sca-courier.vercel.app/
+
+### SCA Shop
+- GitHub: https://github.com/URSourovAdikari/sca-shop
+- Live: https://sca-shop.vercel.app/
+
+## Setup
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open http://localhost:3000.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Environment Variables
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Create a `.env.local` file and add the SMTP credentials used by the contact form.
 
-## Learn More
+```bash
+SMTP_HOST=your-smtp-host
+SMTP_PORT=587
+SMTP_SECURE=false
+SMTP_USER=your-smtp-user
+SMTP_PASS=your-smtp-password
+CONTACT_EMAIL=your-contact-email
+```
 
-To learn more about Next.js, take a look at the following resources:
+## Nodemailer Setup
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+The contact API at `/api/contact` uses Nodemailer for sending portfolio messages. It validates required form fields, checks email format, applies rate limiting, and safely handles errors without exposing SMTP credentials.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Deployment
 
-## Deploy on Vercel
+This project is designed for deployment on Vercel. For production, set the same SMTP environment variables in the hosting environment and verify the domain is configured for metadata and sitemap generation.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Security
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Do not commit `.env`, `.env.local`, or any SMTP credentials.
+- Keep `node_modules`, `.next`, and generated build output out of version control.
+- Never expose sensitive email credentials in code or logs.

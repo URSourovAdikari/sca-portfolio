@@ -18,7 +18,7 @@ const ProjectsBrowser = dynamic(
 
 export const metadata = {
   title: "Projects",
-  description: "Portfolio projects and demo work by Sourov Chandra Adikari, covering frontend, backend, e-commerce, dashboards, and more.",
+  description: "Selected projects by Sourov Chandra Adikari, including SCA Courier and SCA Shop, built with Next.js, TypeScript, Node.js, and modern product design.",
 };
 
 export default function ProjectsPage() {
@@ -26,7 +26,7 @@ export default function ProjectsPage() {
     <div className="space-y-8 rounded-[28px] border border-white/10 bg-slate-950/75 p-6 md:p-8">
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Projects</p>
-        <h1 className="mt-3 text-white">Selected work and demos</h1>
+        <h1 className="mt-3 text-white">Selected work</h1>
       </div>
 
       <ProjectsBrowser />

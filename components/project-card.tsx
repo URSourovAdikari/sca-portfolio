@@ -19,7 +19,7 @@ export function ProjectCard({ project }: { project: Project }) {
           className="h-52 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
         />
         <div className="absolute left-4 top-4 rounded-full border border-cyan-400/40 bg-slate-950/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-300">
-          {project.isDemo ? "Demo Project" : project.category}
+          {project.category}
         </div>
       </div>
 
@@ -29,7 +29,7 @@ export function ProjectCard({ project }: { project: Project }) {
           <span className="text-xs uppercase tracking-[0.18em] text-slate-400">{project.year}</span>
         </div>
 
-        <p className="text-sm leading-6 text-slate-300">{project.shortDescription}</p>
+        <p className="text-sm leading-6 text-slate-300">{project.description}</p>
 
         <div className="flex flex-wrap gap-2">
           {project.technologies.slice(0, 3).map((technology) => (

@@ -14,7 +14,7 @@ export function ProjectsBrowser() {
       const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
       const matchesSearch =
         project.title.toLowerCase().includes(search.toLowerCase()) ||
-        project.shortDescription.toLowerCase().includes(search.toLowerCase()) ||
+        project.description.toLowerCase().includes(search.toLowerCase()) ||
         project.technologies.some((tech) => tech.toLowerCase().includes(search.toLowerCase()));
 
       return matchesCategory && matchesSearch;

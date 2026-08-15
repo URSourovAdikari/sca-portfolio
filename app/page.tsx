@@ -27,7 +27,7 @@ function HomeHero() {
             <p className="text-sm uppercase tracking-[0.26em] text-slate-400">Hi, I&apos;m Sourov Chandra Adikari</p>
             <h1 className="max-w-xl text-white">Full Stack Web Developer</h1>
             <p className="max-w-xl text-base leading-7 text-slate-300 md:text-lg">
-              I design and build clean, scalable web experiences with a strong focus on performance, mobile-first interfaces, and practical problem-solving.
+              I design and build clean, scalable web experiences with a strong focus on product thinking, responsive interfaces, and dependable engineering.
             </p>
           </div>
 
@@ -36,7 +36,7 @@ function HomeHero() {
               View My Work
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <a href="/reaume.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-5 py-3 font-medium text-white transition hover:border-cyan-400/40 hover:text-cyan-200">
+            <a href="/resume.pdf" download className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-5 py-3 font-medium text-white transition hover:border-cyan-400/40 hover:text-cyan-200">
               <Download className="h-4 w-4" />
               Download Resume
             </a>
@@ -76,12 +76,29 @@ function HomeHero() {
 }
 
 function AboutSkillsSection() {
+  const stackGroups = [
+    { title: "Frontend", items: skills.frontend },
+    { title: "Backend", items: skills.backend },
+    { title: "Database", items: skills.database },
+    { title: "Tools", items: skills.tools },
+  ];
+
   return (
     <FadeIn className="grid gap-6 lg:grid-cols-2">
       <section className="rounded-3xl border border-white/10 bg-slate-950/75 p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">About</p>
         <h2 className="mt-4 text-white">Developer with a product mindset</h2>
         <p className="mt-4 text-base leading-7 text-slate-300">{personalInfo.about}</p>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Strengths</p>
+            <p className="mt-2 text-sm text-slate-200">Full Stack Development</p>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-3">
+            <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Focus</p>
+            <p className="mt-2 text-sm text-slate-200">Responsive UI & clean APIs</p>
+          </div>
+        </div>
         <Link href="/about" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-cyan-200">
           More about me <ArrowRight className="h-4 w-4" />
         </Link>
@@ -89,11 +106,18 @@ function AboutSkillsSection() {
 
       <section className="rounded-3xl border border-white/10 bg-slate-950/75 p-6">
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Core Stack</p>
-        <div className="mt-5 flex flex-wrap gap-2">
-          {[...skills.frontend, ...skills.backend, ...skills.database].map((skill) => (
-            <span key={skill} className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs uppercase tracking-[0.12em] text-slate-200">
-              {skill}
-            </span>
+        <div className="mt-5 space-y-4">
+          {stackGroups.map((group) => (
+            <div key={group.title}>
+              <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">{group.title}</p>
+              <div className="mt-2 flex flex-wrap gap-2">
+                {group.items.map((skill) => (
+                  <span key={skill} className="rounded-full border border-white/10 bg-white/3 px-3 py-1.5 text-xs uppercase tracking-[0.12em] text-slate-200">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
         <Link href="/skills" className="mt-6 inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-cyan-200">

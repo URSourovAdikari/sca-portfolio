@@ -120,9 +120,9 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-cyan-400/20">
                 <Image src="/developer.jpg" alt={personalInfo.name} fill className="object-cover" />
               </div>
-              <div>
-                <div className="text-sm font-semibold text-white">Sourov</div>
-                <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Developer</div>
+              <div className="min-w-0">
+                <div className="text-sm font-semibold text-white">Sourov Chandra Adikari</div>
+                <div className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Full Stack Web Developer</div>
               </div>
             </div>
 

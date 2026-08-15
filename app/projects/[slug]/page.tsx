@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   return {
     title: project.title,
-    description: project.shortDescription,
+    description: project.description,
   };
 }
 
@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-cyan-300">
-                {project.isDemo ? "Demo Project" : project.category}
+                {project.category}
               </span>
               <span className="rounded-full border border-white/10 bg-white/3 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-slate-300">
                 {project.year}
@@ -73,9 +73,23 @@ export default async function ProjectDetailPage({
             <h1 className="text-4xl font-semibold text-white md:text-5xl">{project.title}</h1>
           </div>
 
-          <p className="text-base leading-8 text-slate-300">{project.fullDescription}</p>
+          <section className="space-y-4">
+            <h2 className="text-xl font-semibold text-white">Project Overview</h2>
+            <p className="text-base leading-8 text-slate-300">{project.longDescription}</p>
+          </section>
 
-          <div>
+          <section className="grid gap-6 md:grid-cols-2">
+            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <h2 className="text-xl font-semibold text-white">Purpose / Problem</h2>
+              <p className="mt-3 text-base leading-7 text-slate-300">{project.purpose}</p>
+            </div>
+            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+              <h2 className="text-xl font-semibold text-white">Solution</h2>
+              <p className="mt-3 text-base leading-7 text-slate-300">{project.solution}</p>
+            </div>
+          </section>
+
+          <section>
             <h2 className="text-xl font-semibold text-white">Key Features</h2>
             <ul className="mt-4 space-y-3 text-slate-300">
               {project.features.map((feature) => (
@@ -85,7 +99,49 @@ export default async function ProjectDetailPage({
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-white">Development Highlights</h2>
+            <ul className="mt-4 space-y-3 text-slate-300">
+              {project.highlights.map((highlight) => (
+                <li key={highlight} className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-white">What I Learned</h2>
+            <ul className="mt-4 space-y-3 text-slate-300">
+              {project.lessons.map((lesson) => (
+                <li key={lesson} className="flex items-start gap-3">
+                  <span className="mt-1 h-2.5 w-2.5 rounded-full bg-cyan-300" />
+                  <span>{lesson}</span>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section>
+            <h2 className="text-xl font-semibold text-white">Screenshots</h2>
+            <div className="mt-4 grid gap-4 md:grid-cols-2">
+              {project.screenshots.map((image, index) => (
+                <div key={`${project.id}-${index}`} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70">
+                  <Image
+                    src={image}
+                    alt={`${project.title} screenshot ${index + 1}`}
+                    width={1200}
+                    height={800}
+                    loading="lazy"
+                    className="h-52 w-full object-cover md:h-64"
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
         </div>
 
         <aside className="space-y-5 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
@@ -100,7 +156,7 @@ export default async function ProjectDetailPage({
           </div>
 
           <div>
-            <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Technologies</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Technology Stack</p>
             <div className="mt-3 flex flex-wrap gap-2">
               {project.technologies.map((technology) => (
                 <span key={technology} className="rounded-full border border-white/10 bg-white/3 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-slate-200">

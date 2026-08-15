@@ -11,7 +11,7 @@ export default function SkillsPage() {
     { title: "Frontend", items: skills.frontend },
     { title: "Backend", items: skills.backend },
     { title: "Database", items: skills.database },
-    { title: "Tools & Deployment", items: skills.tools },
+    { title: "Tools", items: skills.tools },
   ];
 
   return (

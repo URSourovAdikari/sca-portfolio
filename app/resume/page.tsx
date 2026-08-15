@@ -16,11 +16,11 @@ export default function ResumePage() {
           <h1 className="mt-3 text-4xl font-semibold text-white md:text-5xl">Professional profile</h1>
         </div>
         <div className="flex flex-wrap gap-3">
-          <a href="/reaume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-2.5 font-medium text-white transition hover:border-cyan-400/40 hover:text-cyan-200">
+          <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/3 px-4 py-2.5 font-medium text-white transition hover:border-cyan-400/40 hover:text-cyan-200">
             <ExternalLink className="h-4 w-4" />
             View Resume
           </a>
-          <a href="/reaume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2.5 font-medium text-slate-950 transition hover:bg-cyan-300">
+          <a href="/resume.pdf" download className="inline-flex items-center gap-2 rounded-full bg-cyan-400 px-4 py-2.5 font-medium text-slate-950 transition hover:bg-cyan-300">
             <Download className="h-4 w-4" />
             Download Resume
           </a>
@@ -28,7 +28,7 @@ export default function ResumePage() {
       </div>
 
       <div className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70">
-        <iframe src="/reaume.pdf" title="Sourov Chandra Adikari Resume" className="h-[760px] w-full" />
+        <iframe src="/resume.pdf" title="Sourov Chandra Adikari Resume" className="h-[760px] w-full" />
       </div>
 
       <Link href="/contact" className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-cyan-200">
