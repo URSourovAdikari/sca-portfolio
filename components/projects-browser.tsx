@@ -2,24 +2,35 @@
 
 import { useMemo, useState } from "react";
 import { Search } from "lucide-react";
-import { projectCategories, projects } from "@/data/projects";
+import { projectStatusOptions, projects } from "@/data/projects";
 import { ProjectCard } from "@/components/project-card";
 
 export function ProjectsBrowser() {
   const [search, setSearch] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState<(typeof projectCategories)[number]>("All");
+  const [selectedStatus, setSelectedStatus] = useState<(typeof projectStatusOptions)[number]>("All");
 
   const filteredProjects = useMemo(() => {
-    return projects.filter((project) => {
-      const matchesCategory = selectedCategory === "All" || project.category === selectedCategory;
-      const matchesSearch =
-        project.title.toLowerCase().includes(search.toLowerCase()) ||
-        project.description.toLowerCase().includes(search.toLowerCase()) ||
-        project.technologies.some((tech) => tech.toLowerCase().includes(search.toLowerCase()));
+    return [...projects]
+      .sort((a, b) => {
+        const statusOrder = { completed: 0, "in-progress": 1, upcoming: 2, experimental: 3, archived: 4 };
+        return statusOrder[a.status] - statusOrder[b.status];
+      })
+      .filter((project) => {
+        const matchesStatus = selectedStatus === "All" ||
+          (selectedStatus === "Completed" && project.status === "completed") ||
+          (selectedStatus === "In Progress" && project.status === "in-progress") ||
+          (selectedStatus === "Upcoming" && project.status === "upcoming") ||
+          (selectedStatus === "Experimental" && project.status === "experimental") ||
+          (selectedStatus === "Archived" && project.status === "archived");
 
-      return matchesCategory && matchesSearch;
-    });
-  }, [search, selectedCategory]);
+        const matchesSearch =
+          project.title.toLowerCase().includes(search.toLowerCase()) ||
+          project.description.toLowerCase().includes(search.toLowerCase()) ||
+          project.technologies.some((tech) => tech.toLowerCase().includes(search.toLowerCase()));
+
+        return matchesStatus && matchesSearch;
+      });
+  }, [search, selectedStatus]);
 
   return (
     <div className="space-y-8">
@@ -37,18 +48,18 @@ export function ProjectsBrowser() {
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {projectCategories.map((category) => (
+          {projectStatusOptions.map((status) => (
             <button
-              key={category}
+              key={status}
               type="button"
-              onClick={() => setSelectedCategory(category)}
-              className={`rounded-full border px-3 py-2 text-xs font-medium uppercase tracking-[0.12em] transition ${
-                selectedCategory === category
+              onClick={() => setSelectedStatus(status)}
+              className={`rounded-full border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.12em] transition ${
+                selectedStatus === status
                   ? "border-cyan-400/60 bg-cyan-500/10 text-cyan-300"
                   : "border-white/10 bg-white/3 text-slate-300 hover:border-cyan-400/30 hover:text-white"
               }`}
             >
-              {category}
+              {status}
             </button>
           ))}
         </div>

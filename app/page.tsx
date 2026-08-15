@@ -134,15 +134,15 @@ function FeaturedProjectsSection() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Featured Projects</p>
-          <h2 className="mt-2 text-white">Selected work</h2>
+          <h2 className="mt-2 text-white">Projects I&apos;ve Built</h2>
         </div>
         <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-cyan-200">
           View All Projects <ArrowRight className="h-4 w-4" />
         </Link>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-4">
-        {featuredProjects.slice(0, 4).map((project) => (
+      <div className="grid gap-6 lg:grid-cols-2 xl:grid-cols-3">
+        {featuredProjects.slice(0, 3).map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
       </div>

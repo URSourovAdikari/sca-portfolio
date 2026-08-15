@@ -6,6 +6,8 @@ export type ProjectCategory =
   | "Dashboard"
   | "Other";
 
+export type ProjectStatus = "completed" | "in-progress" | "upcoming" | "experimental" | "archived";
+
 export type Project = {
   id: string;
   title: string;
@@ -13,9 +15,11 @@ export type Project = {
   description: string;
   longDescription: string;
   category: ProjectCategory;
+  status: ProjectStatus;
   technologies: string[];
   features: string[];
   image: string;
+  screenshots: string[];
   githubUrl: string;
   liveUrl: string;
   featured: boolean;
@@ -24,7 +28,6 @@ export type Project = {
   solution: string;
   highlights: string[];
   lessons: string[];
-  screenshots: string[];
 };
 
 export const projects: Project[] = [
@@ -33,38 +36,39 @@ export const projects: Project[] = [
     title: "SCA Courier",
     slug: "sca-courier",
     description:
-      "Parcel tracking and courier workflow platform focused on shipment management, status updates, and a cleaner logistics experience.",
+      "Parcel tracking and courier workflow platform focused on shipment management, status updates, and a clean logistics experience.",
     longDescription:
-      "SCA Courier is a logistics-focused product designed to simplify parcel management, delivery tracking, and shipment visibility. It brings a clearer operational flow to a courier workflow by combining service-friendly status tracking with a responsive dashboard structure.",
+      "SCA Courier is a logistics-focused product built to make parcel operations easier to track and manage. It brings a more readable workflow to courier management through an organized dashboard, shipping detail flow, and responsive UX.",
     category: "Full Stack",
+    status: "completed",
     technologies: ["Next.js", "TypeScript", "Node.js", "MongoDB", "Tailwind CSS"],
     features: [
       "Parcel and shipment tracking workflow",
-      "Courier dashboard for order visibility",
-      "Delivery status updates and operational flow",
-      "Responsive interface for logistics management",
+      "Courier dashboard for operational visibility",
+      "Delivery status tracking and updates",
+      "Responsive logistics interface",
     ],
     image: "/images/projects/sca-courier.svg",
+    screenshots: ["/images/projects/sca-courier.svg", "/images/projects/sca-courier.svg"],
     githubUrl: "https://github.com/URSourovAdikari/sca-courier",
     liveUrl: "https://sca-courier.vercel.app/",
     featured: true,
     year: 2024,
     purpose:
-      "Create a practical logistics application that makes parcel operations easier to review, track, and manage across a clean product workflow.",
+      "Create a practical logistics workflow that makes parcel tracking and shipment management easier to follow for the end user and operations team.",
     solution:
-      "I structured the app around a modern courier dashboard, clear shipment details, and a mobile-friendly interface so the core logistics tasks stay readable and easy to use.",
+      "I built a clean, responsive dashboard-centered product that keeps important shipment information visible while simplifying the day-to-day logistics flow.",
     highlights: [
       "Shipment tracking experience",
       "Operational dashboard layout",
-      "Responsive management interface",
-      "Practical parcel workflow design",
+      "Responsive courier workflow",
+      "Clean logistics UX",
     ],
     lessons: [
-      "Improved my approach to handling logistics-related UI states",
-      "Worked on keeping operational data clear and readable",
-      "Balanced function and simplicity in a management dashboard",
+      "Improved my approach to status-heavy interfaces",
+      "Focused on keeping operational data easy to scan",
+      "Balanced product clarity with practical workflow design",
     ],
-    screenshots: ["/images/projects/sca-courier.svg", "/images/projects/sca-courier.svg"],
   },
   {
     id: "sca-shop",
@@ -73,40 +77,89 @@ export const projects: Project[] = [
     description:
       "Modern e-commerce storefront built for product browsing, cart flow, and a polished online shopping experience.",
     longDescription:
-      "SCA Shop is an e-commerce platform designed around a clean storefront experience with product browsing, cart interactions, and a streamlined ordering flow. It focuses on making product discovery and checkout feel straightforward, responsive, and ready for real-world use.",
+      "SCA Shop is an e-commerce storefront designed around product discovery, cart interaction, and a streamlined shopping flow. It focuses on presenting products clearly while keeping the buying journey responsive and easy to navigate.",
     category: "E-commerce",
+    status: "completed",
     technologies: ["Next.js", "TypeScript", "React", "Node.js", "MongoDB"],
     features: [
       "Product catalog and browsing experience",
       "Shopping cart and checkout flow",
       "Responsive storefront design",
-      "Modern storefront experience for online sales",
+      "Modern online shopping experience",
     ],
     image: "/images/projects/sca-shop.svg",
+    screenshots: ["/images/projects/sca-shop.svg", "/images/projects/sca-shop.svg"],
     githubUrl: "https://github.com/URSourovAdikari/sca-shop",
     liveUrl: "https://sca-shop.vercel.app/",
     featured: true,
     year: 2024,
     purpose:
-      "Build a storefront with a strong shopping journey, clean product presentation, and a practical cart and checkout flow.",
+      "Build a storefront with a strong shopping journey, product clarity, and a practical cart and checkout flow.",
     solution:
-      "I designed the storefront around responsive product discovery, straightforward purchase steps, and a polished interface that keeps the browsing experience focused and easy to navigate.",
+      "I designed the experience around clear product presentation, responsive layouts, and a simple ordering flow so the shopping interaction feels natural and direct.",
     highlights: [
       "Product-first storefront layout",
       "Cart and checkout UX",
-      "Responsive online shopping flow",
-      "Clean catalog and product presentation",
+      "Responsive shopping journey",
+      "Clear catalog experience",
     ],
     lessons: [
       "Strengthened my product-detail and cart UX thinking",
       "Improved conversion-friendly interface structure",
       "Focused on maintainable storefront architecture",
     ],
-    screenshots: ["/images/projects/sca-shop.svg", "/images/projects/sca-shop.svg"],
+  },
+  {
+    id: "sca-universe",
+    title: "SCA Universe",
+    slug: "sca-universe",
+    description:
+      "A polished digital product experience centered on the SCA Universe concept, built for a strong live presentation and modern user journey.",
+    longDescription:
+      "SCA Universe is an interactive product experience designed to present a branded digital concept with a polished interface and clean product storytelling. The site focuses on presentation, clarity, and a strong modern visual identity.",
+    category: "Frontend",
+    status: "completed",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "React"],
+    features: [
+      "Modern product presentation",
+      "Responsive landing experience",
+      "Brand-focused interface design",
+      "Live web product showcase",
+    ],
+    image: "/images/projects/portfolio-project.svg",
+    screenshots: ["/images/projects/portfolio-project.svg", "/images/projects/portfolio-project.svg"],
+    githubUrl: "",
+    liveUrl: "https://sca-universe.vercel.app/",
+    featured: true,
+    year: 2025,
+    purpose:
+      "Deliver a polished digital experience that presents the SCA Universe concept clearly and professionally on the web.",
+    solution:
+      "I shaped the interface around a modern product narrative, strong visual hierarchy, and a responsive layout that keeps the experience clear and engaging across screen sizes.",
+    highlights: [
+      "Brand-centered product presentation",
+      "Responsive modern UI",
+      "Launch-ready web experience",
+      "Clear product storytelling",
+    ],
+    lessons: [
+      "Refined my focus on polished product presentation",
+      "Improved my approach to visual hierarchy for product storytelling",
+      "Worked on keeping breadth and clarity balanced in a front-end experience",
+    ],
   },
 ];
 
 export const featuredProjects = projects.filter((project) => project.featured);
+
+export const projectStatusOptions = [
+  "All",
+  "Completed",
+  "In Progress",
+  "Upcoming",
+  "Experimental",
+  "Archived",
+] as const;
 
 export const projectCategories = [
   "All",
