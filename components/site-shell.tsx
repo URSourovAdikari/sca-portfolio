@@ -42,8 +42,6 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
     "/projects": ArrowUpRight,
     "/experience": BriefcaseBusiness,
     "/education": GraduationCap,
-    "/resume": FileText,
-    "/contact": MessageSquareText,
   } as const;
 
   const sidebarContent = (
