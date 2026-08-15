@@ -29,8 +29,6 @@ export const navItems: NavItem[] = [
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/education", label: "Education" },
-  { href: "/resume", label: "Resume" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export const socialLinks: SocialLink[] = [

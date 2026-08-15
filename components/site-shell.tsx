@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
-import { ArrowUpRight, BriefcaseBusiness, FileText, GraduationCap, Home, MessageSquareText } from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, GraduationCap, Home } from "lucide-react";
 import { FiMenu, FiX } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import { navItems, personalInfo } from "@/data/portfolio";
