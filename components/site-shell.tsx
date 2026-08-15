@@ -88,12 +88,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
         <div className="flex flex-col gap-2">
           <Link
             href="/resume"
+            onClick={() => setMobileOpen(false)}
             className="inline-flex items-center justify-center rounded-full border border-cyan-400/40 bg-cyan-500/10 px-4 py-2.5 text-sm font-medium text-cyan-200 transition hover:bg-cyan-500/20"
           >
             Resume
           </Link>
           <Link
             href="/contact"
+            onClick={() => setMobileOpen(false)}
             className="inline-flex items-center justify-center rounded-full bg-white px-4 py-2.5 text-sm font-medium text-slate-950 transition hover:bg-slate-200"
           >
             Contact
