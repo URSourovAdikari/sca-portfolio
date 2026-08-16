@@ -23,13 +23,15 @@ export const metadata = {
 
 export default function ProjectsPage() {
   return (
-    <div className="space-y-8 rounded-[28px] border border-white/10 bg-slate-950/75 p-6 md:p-8">
+    <div className="space-y-8 py-6 md:py-8">
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Projects</p>
         <h1 className="mt-3 text-white">Selected work</h1>
       </div>
 
-      <ProjectsBrowser />
+      <div className="border-t border-white/10 pt-8">
+        <ProjectsBrowser />
+      </div>
     </div>
   );
 }

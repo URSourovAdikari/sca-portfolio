@@ -29,16 +29,16 @@ export const metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="space-y-8 rounded-[28px] border border-white/10 bg-slate-950/75 p-6 md:p-8">
+    <div className="space-y-8 py-6 md:py-8">
       <div>
         <p className="text-xs uppercase tracking-[0.2em] text-cyan-300">Contact</p>
         <h1 className="mt-3 text-white">Let&apos;s Build Something Together</h1>
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[0.8fr_1.2fr]">
+      <div className="grid gap-6 border-t border-white/10 pt-8 lg:grid-cols-[0.8fr_1.2fr]">
         <ContactDetails />
 
-        <div className="rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+        <div className="border-t border-white/10 pt-5 lg:border-t-0 lg:border-l lg:pl-6 lg:pt-0">
           <ContactForm />
         </div>
       </div>

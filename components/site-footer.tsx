@@ -7,8 +7,8 @@ export function SiteFooter() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-white/10 bg-slate-950/80">
-      <div className="mx-auto w-full max-w-[1800px] px-4 py-10 sm:px-6 lg:px-8">
+    <footer className="border-t border-white/10 bg-slate-950/40">
+      <div className="mx-auto w-full max-w-[1800px] px-4 py-12 sm:px-6 lg:px-8">
         <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-4">
           <div className="space-y-4">
             <div>
@@ -20,7 +20,7 @@ export function SiteFooter() {
             </p>
           </div>
 
-          <div>
+          <div className="border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Quick Links</p>
             <ul className="mt-4 space-y-2.5 text-sm text-slate-300">
               {navItems.map(({ href, label }) => (
@@ -33,7 +33,7 @@ export function SiteFooter() {
             </ul>
           </div>
 
-          <div>
+          <div className="border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Connect</p>
             <div className="mt-4 space-y-3">
               <div className="flex flex-wrap items-center gap-2">
@@ -58,9 +58,9 @@ export function SiteFooter() {
             </div>
           </div>
 
-          <div className="space-y-4">
+          <div className="border-t border-white/10 pt-4 md:border-t-0 md:pt-0">
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">Contact</p>
-            <div className="space-y-3 text-sm text-slate-300">
+            <div className="mt-4 space-y-3 text-sm text-slate-300">
               <a href={`mailto:${personalInfo.email}`} className="flex items-start gap-3 break-all transition hover:text-cyan-200">
                 <FiMail className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" />
                 <span>{personalInfo.email}</span>
@@ -77,14 +77,14 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+        <div className="mt-8 flex flex-col items-center gap-3 border-t border-white/10 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
           <p className="text-center sm:text-left">© {year} Sourov Chandra Adikari. All rights reserved.</p>
           <p className="text-center sm:text-left">Full Stack Web Developer</p>
           <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end">
-            <Link href="/terms" className="transition hover:text-cyan-200">
+            <Link href="/terms" className="flex items-center transition hover:text-cyan-200">
               Terms &amp; Conditions
             </Link>
-            <Link href="/privacy" className="transition hover:text-cyan-200">
+            <Link href="/privacy" className="flex items-center transition hover:text-cyan-200">
               Privacy Policy
             </Link>
           </div>

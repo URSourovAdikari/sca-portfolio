@@ -41,13 +41,13 @@ export default async function ProjectDetailPage({
   const hasLive = Boolean(project.liveUrl?.trim());
 
   return (
-    <article className="space-y-8 rounded-[28px] border border-white/10 bg-slate-950/75 p-6 md:p-8">
+    <article className="space-y-8 pb-8">
       <Link href="/projects" className="inline-flex items-center gap-2 text-sm font-medium text-cyan-300 hover:text-cyan-200">
         <ArrowLeft className="h-4 w-4" />
         Back to Projects
       </Link>
 
-      <div className="overflow-hidden rounded-[26px] border border-white/10 bg-slate-900/80">
+      <div className="overflow-hidden border-b border-white/10 pb-5">
         <Image
           src={project.image}
           alt={project.title}
@@ -59,8 +59,8 @@ export default async function ProjectDetailPage({
         />
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
-        <div className="space-y-6">
+      <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:gap-12">
+        <div className="space-y-7">
           <div className="space-y-3">
             <div className="flex flex-wrap items-center gap-2">
               <span className="rounded-full border border-cyan-400/30 bg-cyan-500/10 px-2.5 py-1 text-[10px] uppercase tracking-[0.18em] text-cyan-300">
@@ -73,23 +73,23 @@ export default async function ProjectDetailPage({
             <h1 className="text-4xl font-semibold text-white md:text-5xl">{project.title}</h1>
           </div>
 
-          <section className="space-y-4">
+          <section className="space-y-4 border-t border-white/10 pt-6">
             <h2 className="text-xl font-semibold text-white">Project Overview</h2>
             <p className="text-base leading-8 text-slate-300">{project.longDescription}</p>
           </section>
 
-          <section className="grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+          <section className="grid gap-5 border-t border-white/10 pt-6 md:grid-cols-2">
+            <div>
               <h2 className="text-xl font-semibold text-white">Purpose / Problem</h2>
               <p className="mt-3 text-base leading-7 text-slate-300">{project.purpose}</p>
             </div>
-            <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
+            <div>
               <h2 className="text-xl font-semibold text-white">Solution</h2>
               <p className="mt-3 text-base leading-7 text-slate-300">{project.solution}</p>
             </div>
           </section>
 
-          <section>
+          <section className="border-t border-white/10 pt-6">
             <h2 className="text-xl font-semibold text-white">Key Features</h2>
             <ul className="mt-4 space-y-3 text-slate-300">
               {project.features.map((feature) => (
@@ -101,7 +101,7 @@ export default async function ProjectDetailPage({
             </ul>
           </section>
 
-          <section>
+          <section className="border-t border-white/10 pt-6">
             <h2 className="text-xl font-semibold text-white">Development Highlights</h2>
             <ul className="mt-4 space-y-3 text-slate-300">
               {project.highlights.map((highlight) => (
@@ -113,7 +113,7 @@ export default async function ProjectDetailPage({
             </ul>
           </section>
 
-          <section>
+          <section className="border-t border-white/10 pt-6">
             <h2 className="text-xl font-semibold text-white">What I Learned</h2>
             <ul className="mt-4 space-y-3 text-slate-300">
               {project.lessons.map((lesson) => (
@@ -125,11 +125,11 @@ export default async function ProjectDetailPage({
             </ul>
           </section>
 
-          <section>
+          <section className="border-t border-white/10 pt-6">
             <h2 className="text-xl font-semibold text-white">Screenshots</h2>
             <div className="mt-4 grid gap-4 md:grid-cols-2">
               {project.screenshots.map((image, index) => (
-                <div key={`${project.id}-${index}`} className="overflow-hidden rounded-2xl border border-white/10 bg-slate-900/70">
+                <div key={`${project.id}-${index}`} className="overflow-hidden border border-white/10 bg-slate-900/60">
                   <Image
                     src={image}
                     alt={`${project.title} screenshot ${index + 1}`}
@@ -144,7 +144,7 @@ export default async function ProjectDetailPage({
           </section>
         </div>
 
-        <aside className="space-y-5 rounded-2xl border border-white/10 bg-slate-900/60 p-5">
+        <aside className="space-y-5 border-l border-white/10 pl-0 pt-0 lg:pl-8 lg:pt-2">
           <div>
             <p className="text-xs uppercase tracking-[0.18em] text-slate-400">Category</p>
             <p className="mt-2 text-lg font-medium text-white">{project.category}</p>

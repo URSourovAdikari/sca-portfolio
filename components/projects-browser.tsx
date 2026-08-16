@@ -34,7 +34,7 @@ export function ProjectsBrowser() {
 
   return (
     <div className="space-y-8">
-      <div className="flex flex-col gap-4 rounded-2xl border border-white/10 bg-slate-950/60 p-4 md:flex-row md:items-center md:justify-between">
+      <div className="flex flex-col gap-4 border-t border-white/10 pt-4 md:flex-row md:items-center md:justify-between">
         <div className="relative w-full md:max-w-md">
           <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-slate-400" />
           <input
@@ -43,7 +43,7 @@ export function ProjectsBrowser() {
             onChange={(event) => setSearch(event.target.value)}
             placeholder="Search projects..."
             aria-label="Search projects"
-            className="w-full rounded-xl border border-white/10 bg-slate-900/80 py-3 pl-10 pr-3 text-sm text-white outline-none transition focus:border-cyan-400/50"
+            className="w-full rounded-full border border-white/10 bg-slate-900/50 py-3 pl-10 pr-3 text-sm text-white outline-none transition focus:border-cyan-400/50"
           />
         </div>
 
@@ -56,7 +56,7 @@ export function ProjectsBrowser() {
               className={`rounded-full border px-3 py-2 text-[10px] font-medium uppercase tracking-[0.12em] transition ${
                 selectedStatus === status
                   ? "border-cyan-400/60 bg-cyan-500/10 text-cyan-300"
-                  : "border-white/10 bg-white/3 text-slate-300 hover:border-cyan-400/30 hover:text-white"
+                  : "border-white/10 bg-white/2 text-slate-300 hover:border-cyan-400/30 hover:text-white"
               }`}
             >
               {status}
@@ -72,7 +72,7 @@ export function ProjectsBrowser() {
           ))}
         </div>
       ) : (
-        <div className="rounded-2xl border border-dashed border-white/10 bg-slate-950/50 p-8 text-center text-slate-300">
+        <div className="border-t border-dashed border-white/10 pt-8 text-center text-slate-300">
           No projects match your search yet.
         </div>
       )}

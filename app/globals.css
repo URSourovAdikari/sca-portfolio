@@ -37,14 +37,27 @@ html {
 
 body {
   background:
-    radial-gradient(circle at top, rgba(59, 130, 246, 0.16), transparent 25%),
-    linear-gradient(180deg, #030712 0%, #050816 100%);
+    radial-gradient(circle at top, rgba(34, 211, 238, 0.12), transparent 22%),
+    radial-gradient(circle at 80% 10%, rgba(96, 165, 250, 0.12), transparent 18%),
+    linear-gradient(180deg, #030712 0%, #050816 35%, #07111d 100%);
   color: var(--foreground);
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
   font-size: var(--fluid-body);
   line-height: 1.7;
   min-height: 100vh;
   text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(148, 163, 184, 0.08) 0.8px, transparent 0.8px);
+  background-position: 0 0;
+  background-size: 18px 18px;
+  mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+  opacity: 0.28;
 }
 
 h1,

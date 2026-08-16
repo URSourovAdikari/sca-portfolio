@@ -20,7 +20,7 @@ export function ContactDetails() {
   };
 
   return (
-    <div className="space-y-5 rounded-3xl border border-white/10 bg-slate-900/70 p-5">
+    <div className="space-y-5 border-t border-white/10 pt-5">
       <div className="space-y-4">
         <div className="flex items-center gap-3 text-slate-200">
           <Mail className="h-5 w-5 text-cyan-300" />
@@ -47,7 +47,7 @@ export function ContactDetails() {
         </div>
       </div>
 
-      <div className="rounded-2xl border border-white/10 bg-white/3 p-4">
+      <div className="border-t border-white/10 pt-4">
         <div className="mb-3 flex items-center justify-between gap-3">
           <p className="text-sm uppercase tracking-[0.15em] text-slate-400">Social</p>
           <button

@@ -46,15 +46,17 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
 
   const sidebarContent = (
     <>
-      <div className="flex items-center gap-3 border-b border-white/10 p-5">
-        <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-2xl border border-cyan-400/20 bg-slate-900 shadow-[0_0_20px_rgba(34,211,238,0.15)]">
-          <Image src="/developer.jpg" alt={personalInfo.name} fill className="object-cover" />
-        </div>
-        <div className="flex-1 leading-tight">
-          <h2 className="max-w-none text-[12px] font-semibold text-white sm:text-[14px] lg:text-[16px]">
-            {personalInfo.name}
-          </h2>
-          <p className="mt-1 text-[11px] text-slate-300">{personalInfo.title}</p>
+      <div className="p-5">
+        <div className="flex items-center gap-3 pb-4">
+          <div className="relative h-14 w-14 shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-slate-900">
+            <Image src="/developer.jpg" alt={personalInfo.name} fill className="object-cover" />
+          </div>
+          <div className="flex-1 leading-tight">
+            <h2 className="max-w-none text-[12px] font-semibold text-white sm:text-[14px] lg:text-[16px]">
+              {personalInfo.name}
+            </h2>
+            <p className="mt-1 text-[11px] uppercase tracking-[0.14em] text-slate-300">{personalInfo.title}</p>
+          </div>
         </div>
       </div>
 
@@ -68,14 +70,16 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
               key={href}
               href={href}
               onClick={() => setMobileOpen(false)}
-              className={`flex items-center justify-between rounded-xl px-3 py-2.5 text-sm font-medium transition ${
+              className={`flex items-center justify-between px-3 py-2.5 text-sm font-medium transition duration-200 ${
                 active
-                  ? "bg-cyan-500/10 text-cyan-300 ring-1 ring-cyan-400/20"
-                  : "text-slate-300 hover:bg-white/5 hover:text-white"
+                  ? "border-l border-cyan-400 bg-cyan-500/5 text-cyan-200"
+                  : "text-slate-300 hover:bg-white/3 hover:text-white"
               }`}
             >
               <span className="flex items-center gap-3">
-                <Icon className="h-4 w-4" />
+                <span className={`flex h-8 w-8 items-center justify-center rounded-full border ${active ? "border-cyan-400/40 bg-cyan-500/10 text-cyan-200" : "border-white/10 bg-slate-900 text-slate-300"}`}>
+                  <Icon className="h-4 w-4" />
+                </span>
                 {label}
               </span>
             </Link>
@@ -84,7 +88,10 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
       </nav>
 
       <div className="border-t border-white/10 p-4">
-        <SocialLinks className="mb-4" />
+        <div className="mb-4 border-b border-white/10 pb-4">
+          <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Social</p>
+          <SocialLinks className="mt-3" />
+        </div>
         <div className="flex flex-col gap-2">
           <Link
             href="/resume"
@@ -96,7 +103,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           <Link
             href="/contact"
             onClick={() => setMobileOpen(false)}
-            className="inline-flex items-center justify-center rounded-full bg-white px-4 py-2.5 text-sm font-medium text-slate-950 transition hover:bg-slate-200"
+            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/3 px-4 py-2.5 text-sm font-medium text-white transition hover:border-white/20 hover:bg-white/5"
           >
             Contact
           </Link>
@@ -106,15 +113,15 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="mx-auto flex w-full max-w-[1800px] flex-1 lg:gap-6 lg:p-6">
-      <aside className="hidden w-[290px] flex-shrink-0 lg:flex">
-        <div className="sticky top-6 flex h-[calc(100vh-3rem)] w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 shadow-[0_0_0_1px_rgba(148,163,184,0.08)] backdrop-blur-sm">
+    <div className="mx-auto flex w-full max-w-[1800px] flex-1 lg:gap-8">
+      <aside className="hidden w-[290px] shrink-0 lg:flex">
+        <div className="sticky top-0 flex h-screen w-full flex-col overflow-hidden border-r border-white/10 bg-slate-950/10 backdrop-blur-sm">
           {sidebarContent}
         </div>
       </aside>
 
-      <div className="flex flex-1 flex-col pb-12 pt-6 lg:pt-0">
-        <div className="sticky top-0 z-30 lg:hidden">
+      <div className="flex flex-1 flex-col pb-12 pt-0">
+        <div className="sticky top-0 z-30 w-full lg:hidden">
           <div className="flex items-center justify-between border-b border-white/10 bg-slate-950/80 px-4 py-3 backdrop-blur-sm">
             <div className="flex items-center gap-3">
               <div className="relative h-10 w-10 overflow-hidden rounded-xl border border-cyan-400/20">
@@ -137,7 +144,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <main className="mx-auto flex w-full max-w-6xl flex-1 px-4 pt-5 lg:px-6 lg:pt-8">{children}</main>
+        <main className="mx-auto flex w-full max-w-[1800px] flex-1 min-h-[calc(100vh-5rem)] px-4 pt-5 sm:px-6 lg:px-8 lg:pt-6">{children}</main>
       </div>
 
       <AnimatePresence>

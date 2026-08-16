@@ -16,7 +16,7 @@ export function ProjectCard({ project }: { project: Project }) {
   };
 
   return (
-    <article className="group overflow-hidden rounded-2xl border border-white/10 bg-slate-950/70 shadow-[0_0_0_1px_rgba(148,163,184,0.08)] transition duration-300 hover:-translate-y-1 hover:border-cyan-400/40 hover:shadow-[0_18px_40px_rgba(14,116,144,0.12)]">
+    <article className="group overflow-hidden border border-white/10 bg-slate-950/40 transition duration-300 hover:border-cyan-400/30 hover:bg-slate-950/60">
       <div className="relative overflow-hidden border-b border-white/10">
         <Image
           src={project.image}
@@ -25,13 +25,14 @@ export function ProjectCard({ project }: { project: Project }) {
           height={520}
           sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
           loading="lazy"
-          className="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.03]"
+          className="h-56 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
         />
+        <div className="absolute inset-0 bg-gradient-to-t from-slate-950 via-transparent to-transparent" />
         <div className="absolute left-4 top-4 flex flex-wrap gap-2">
-          <span className="rounded-full border border-cyan-400/40 bg-slate-950/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-300">
+          <span className="rounded-full border border-cyan-400/30 bg-slate-950/80 px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] text-cyan-300 backdrop-blur-sm">
             {project.category}
           </span>
-          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] ${statusStyles[project.status]}`}>
+          <span className={`rounded-full border px-2.5 py-1 text-[10px] font-medium uppercase tracking-[0.2em] backdrop-blur-sm ${statusStyles[project.status]}`}>
             {project.status.replace("-", " ")}
           </span>
         </div>
@@ -49,7 +50,7 @@ export function ProjectCard({ project }: { project: Project }) {
           {project.technologies.map((technology) => (
             <span
               key={`${project.id}-${technology}`}
-              className="rounded-full border border-white/10 bg-white/3 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-slate-300"
+              className="rounded-full border border-white/10 bg-white/2 px-2.5 py-1 text-[10px] uppercase tracking-[0.12em] text-slate-300"
             >
               {technology}
             </span>
