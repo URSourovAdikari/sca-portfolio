@@ -106,14 +106,14 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   );
 
   return (
-    <div className="mx-auto flex min-h-screen max-w-[1800px] lg:gap-6 lg:p-6">
+    <div className="mx-auto flex w-full max-w-[1800px] flex-1 lg:gap-6 lg:p-6">
       <aside className="hidden w-[290px] flex-shrink-0 lg:flex">
         <div className="sticky top-6 flex h-[calc(100vh-3rem)] w-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-slate-950/80 shadow-[0_0_0_1px_rgba(148,163,184,0.08)] backdrop-blur-sm">
           {sidebarContent}
         </div>
       </aside>
 
-      <div className="flex-1 pb-12 pt-6 lg:pt-0">
+      <div className="flex flex-1 flex-col pb-12 pt-6 lg:pt-0">
         <div className="sticky top-0 z-30 lg:hidden">
           <div className="flex items-center justify-between border-b border-white/10 bg-slate-950/80 px-4 py-3 backdrop-blur-sm">
             <div className="flex items-center gap-3">
@@ -137,7 +137,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
           </div>
         </div>
 
-        <main className="mx-auto w-full max-w-6xl px-4 pt-5 lg:px-6 lg:pt-8">{children}</main>
+        <main className="mx-auto flex w-full max-w-6xl flex-1 px-4 pt-5 lg:px-6 lg:pt-8">{children}</main>
       </div>
 
       <AnimatePresence>

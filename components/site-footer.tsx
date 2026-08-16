@@ -77,9 +77,17 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between">
-          <p>© {year} Sourov Chandra Adikari. All rights reserved.</p>
-          <p>Full Stack Web Developer</p>
+        <div className="mt-8 flex flex-col gap-3 border-t border-white/10 pt-5 text-xs text-slate-400 sm:flex-row sm:items-center sm:justify-between sm:gap-4">
+          <p className="text-center sm:text-left">© {year} Sourov Chandra Adikari. All rights reserved.</p>
+          <p className="text-center sm:text-left">Full Stack Web Developer</p>
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-end">
+            <Link href="/terms" className="transition hover:text-cyan-200">
+              Terms &amp; Conditions
+            </Link>
+            <Link href="/privacy" className="transition hover:text-cyan-200">
+              Privacy Policy
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
