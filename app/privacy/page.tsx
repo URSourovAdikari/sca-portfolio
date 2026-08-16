@@ -34,22 +34,22 @@ export default function PrivacyPage() {
   });
 
   return (
-    <div className="mx-auto max-w-5xl px-4 pb-12 pt-4 md:px-6 lg:px-8">
-      <div className="mb-8 rounded-[28px] border border-white/10 bg-slate-950/80 p-6 shadow-[0_0_0_1px_rgba(148,163,184,0.08)] md:p-8">
+    <div className="mx-auto w-full max-w-6xl pb-12 pt-4">
+      <div className="mb-8 border-b border-white/10 pb-6">
         <p className="text-[10px] font-medium uppercase tracking-[0.24em] text-cyan-300">Legal</p>
         <h1 className="mt-4 text-3xl font-semibold text-white md:text-4xl">Privacy Policy</h1>
         <p className="mt-3 text-sm text-slate-400">Last updated: {currentDate}</p>
       </div>
 
-      <div className="grid gap-8 xl:grid-cols-[260px_minmax(0,1fr)]">
-        <aside className="rounded-[24px] border border-white/10 bg-slate-950/60 p-5 xl:sticky xl:top-6 xl:h-fit">
+      <div className="grid gap-8 xl:grid-cols-[260px_minmax(0,1fr)] xl:gap-12">
+        <aside className="xl:sticky xl:top-6 xl:h-fit">
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-400">Contents</p>
-          <nav className="mt-4 space-y-2">
+          <nav className="mt-4 space-y-2 border-l border-white/10 pl-4">
             {sections.map((item) => (
               <a
                 key={item.id}
                 href={`#${item.id}`}
-                className="block rounded-lg border border-white/5 px-3 py-2 text-sm text-slate-300 transition hover:border-cyan-400/30 hover:text-cyan-200"
+                className="block text-sm text-slate-300 transition hover:text-cyan-200"
               >
                 {item.label}
               </a>
@@ -57,8 +57,8 @@ export default function PrivacyPage() {
           </nav>
         </aside>
 
-        <article className="space-y-8 rounded-[28px] border border-white/10 bg-slate-950/70 p-6 md:p-8">
-          <section id="introduction" className="scroll-mt-24">
+        <article className="space-y-8">
+          <section id="introduction" className="scroll-mt-24 border-t border-white/10 pt-6">
             <h2 className="text-2xl font-semibold text-white">1. Introduction</h2>
             <p className="mt-4 text-base leading-8 text-slate-300">
               This Privacy Policy explains how Sourov Chandra Adikari, a Full Stack Web Developer, handles information collected
@@ -262,7 +262,7 @@ export default function PrivacyPage() {
             </p>
           </section>
 
-          <div className="rounded-2xl border border-cyan-400/20 bg-cyan-500/5 p-4 text-sm leading-7 text-slate-300">
+          <div className="border-t border-white/10 pt-6 text-sm leading-7 text-slate-300">
             <Link href="/" className="inline-flex items-center text-cyan-300 transition hover:text-cyan-200">
               ← Back to homepage
             </Link>
